@@ -5,6 +5,9 @@
       %title
         = PLANETOID_CONF[:site][:title]
       %link{ :href => PLANETOID_CONF[:site][:feed_url].to_s.blank? ? entries_url(:format => :rss) : PLANETOID_CONF[:site][:feed_url].to_s, :title => "#{PLANETOID_CONF[:site][:title]} feed", :rel => "alternate", :type => "application/rss+xml" }
+      %link{:rel => "shortcut icon", :href => "/images/favicon.ico", :type => "image/x-icon"}
+      %link{:rel => "icon", :href => "/images/animated_favicon.gif", :type => "image/gif"}
+      
       %meta{ :name => "generator", :content => "Planetoid" }
       /
         leave this for stats
