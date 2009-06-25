@@ -1,0 +1,7 @@
+.span-15.last
+  = render :partial => 'shared/admin_links' if admin?
+.span-15.last
+  = render :partial => 'shared/flashes'
+.span-15.last
+  %h1
+    = PLANETOID_CONF[:site][:title]

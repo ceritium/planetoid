@@ -1,0 +1,12 @@
+.span-7
+  %h2
+    Projects
+.span-15.leftborder.last
+  - @projects.each do |project|
+    = render :partial => 'projects/project', :locals => { :project => project }
+    - if project != @projects.last
+      %br
+  - if admin?
+    %br.clear
+    %p
+      = link_to 'New project', new_project_path

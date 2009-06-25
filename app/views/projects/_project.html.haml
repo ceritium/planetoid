@@ -1,0 +1,16 @@
+.span-12.last
+  %h3
+    %strong
+      = h project.name
+    %small
+      by
+      = project.users.map {|u| "#{link_to(h(u.name), user_slug_path(u))}"}.join(", ")
+  %p
+    = link_to h(project.url.gsub("http://", "")), h(project.url)
+  %blockquote
+    = simple_format(project.description)
+  - if admin?
+    %p
+      = link_to 'Edit', edit_project_path(project)
+      |
+      = link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete

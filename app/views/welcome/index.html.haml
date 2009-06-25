@@ -1,0 +1,3 @@
+= render :partial => 'users/list', :locals=>{:users=>@users} if PLANETOID_CONF[:layout][:home][:show_users] && !@users.empty?
+= render :partial => 'projects/list' if PLANETOID_CONF[:layout][:home][:show_projects] && !@projects.empty?
+= render :partial => 'entries/list' if PLANETOID_CONF[:layout][:home][:show_entries] && !@entries.empty?

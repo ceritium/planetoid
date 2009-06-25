@@ -1,0 +1,9 @@
+.span-24.last
+  %h2
+    = PLANETOID_CONF[:layout][:entries][:title]
+.span-22.prepend-1.append-1.last
+  - @entries.each do |entry|
+    = render :partial => 'entries/entry', :locals => {:entry => entry}
+
+%hr.space
+%hr

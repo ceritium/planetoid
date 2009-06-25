@@ -1,0 +1,18 @@
+.span-7
+  %h2
+    Feeds
+.span-15.leftborder.last
+  %h3
+    Edit feed
+  - form_for(@feed) do |f|
+    = f.error_messages
+    %p
+      = f.label :user_id
+      %br
+      = f.collection_select :user_id, User.find(:all), :id, :name
+    %p
+      = f.label :feed_url
+      %br
+      = f.text_field :feed_url
+    %p
+      = f.submit 'Update'

@@ -1,0 +1,28 @@
+.span-24.last
+  %h2
+    Feeds
+.span-22.append-1.prepend-1.last
+  %h3
+    For your convenience, here's the full list of feeds in this planet
+  %table
+    %tr
+      %th
+        User
+      %th
+        Feed url
+      %th{ :colspan => "2" }
+        \&nbsp;
+    - @feeds.each do |feed|
+      %tr
+        %td
+          = link_to h(feed.user.name), user_slug_path(feed.user)
+        %td
+          = auto_link feed.feed_url
+        - if admin?
+          %td
+            = link_to 'Edit', edit_feed_path(feed)
+          %td
+            = link_to 'Destroy', feed, :confirm => 'Are you sure?', :method => :delete
+    - if admin?
+      %br
+      = link_to 'New feed', new_feed_path

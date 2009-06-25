@@ -1,8 +1,0 @@
-<div class="span-22 prepend-1 append-1 last">
-	<%= render :partial => 'users/user', :locals => { :user => @user }  %>
-	<hr />
-</div>
-
-<%= render :partial => 'projects/list' if !@projects.empty? %>
-
-<%= render :partial => 'entries/list' if !@entries.empty? %>

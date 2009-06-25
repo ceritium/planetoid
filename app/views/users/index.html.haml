@@ -1,0 +1,9 @@
+.span-24.last
+  %h2
+    Members
+= render :partial => 'users/list', :locals=>{:users=>@users} unless @users.empty?
+.span-24.last
+  - if admin?
+    %br.clear
+    %p
+      = link_to 'New member', new_user_path

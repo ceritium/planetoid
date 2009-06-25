@@ -1,0 +1,19 @@
+.span-7
+  %h2
+    Authentication required
+.span-15.leftborder.last
+  %h3
+    Your credentials, please!
+  - form_tag session_path do
+    %p
+      %strong
+        Login:
+      %br
+      = text_field_tag :login
+    %p
+      %strong
+        Password:
+      %br
+      = password_field_tag :password
+    %p
+      = submit_tag "Login"

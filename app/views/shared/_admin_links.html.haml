@@ -1,0 +1,12 @@
+- if session[:admin]
+  %div{ :style => "float:right; border: 1px solid orange; padding: 5px;" }
+    %strong
+      admin
+    \:
+    = link_to 'miembros', users_path
+    |
+    = link_to 'feeds', feeds_path
+    |
+    = link_to 'proyectos', projects_path
+    |
+    = link_to 'log out', logout_path

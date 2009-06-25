@@ -1,0 +1,9 @@
+- users.in_groups_of(2).each do |user_row|
+  .span-11.prepend-1
+    - user = user_row[0]
+    = render :partial => 'users/user', :locals => { :user => user }
+  .span-11.append-1.last
+    - user = user_row[1]
+    = render :partial => 'users/user', :locals => { :user => user } unless user.nil?
+  .span-24.last
+    %hr
