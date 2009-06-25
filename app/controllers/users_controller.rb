@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     
   # GET /users
   def index
-    @users = User.all(:order => :name, :include => :entries)
+    @users = User.all(:order => :name, :include => [:entries, :projects])
 
     respond_to do |format|
       format.html # index.html.erb

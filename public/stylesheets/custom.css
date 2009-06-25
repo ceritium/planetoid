@@ -7,6 +7,10 @@ html, body {
 	background-position:center;
 }
 
+th {
+	background-color:#ccc;
+}
+
 .contenidos{
     padding-bottom:40px;
 	background-repeat:no-repeat;

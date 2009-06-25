@@ -3,8 +3,6 @@
     = link_to h(entry.title), entry.url
   publicado hace
   = " #{time_ago_in_words entry.published}" if entry.published
-  %link{:rel => "shortcut icon", :href => "/images/favicon.ico", :type => "image/x-icon"}
-  %link{:rel => "icon", :href => "/images/animated_favicon.gif", :type => "image/gif"}
   = link_to h(entry.feed.user.name), user_slug_path(entry.feed.user)
   = link_to image_tag(url_for_gravatar(entry.feed.user.email), :alt => h(entry.feed.user.name), :title => h(entry.feed.user.name), :align => 'absmiddle', :hspace => 10), user_slug_path(entry.feed.user) if PLANETOID_CONF[:layout][:entries][:show_avatar]
 - if PLANETOID_CONF[:layout][:entries][:show_summary] && entry.summary

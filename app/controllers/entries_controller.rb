@@ -1,7 +1,7 @@
 class EntriesController < ApplicationController  
   # GET /entries
   def index
-    @entries = Entry.all(:limit => 100, :order => 'published desc')
+    @entries = Entry.all(:limit => 100, :order => 'published desc', :include => [:feed => :user])
 
     respond_to do |format|
       format.html # index.html.erb
