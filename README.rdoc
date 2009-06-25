@@ -50,6 +50,7 @@ Here's a list of sample sites using Planetoid. If you want your site to be added
 
 * http://spainrb.org
 * http://planetgirona.net
+* http://planet.flowersinspace.com
 
 = To Do
 
