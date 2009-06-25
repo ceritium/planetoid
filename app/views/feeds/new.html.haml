@@ -5,15 +5,14 @@
   %h3
     New feed
   - form_for(@feed) do |f|
-  = f.error_messages
-  %p
-    = f.label :user_id
-    %br
-    = f.collection_select :user_id, User.find(:all), :id, :name
-  %p
-    = f.label :feed_url
-    %br
-    = f.text_field :feed_url
-  %p
-    = f.submit 'Create'
-  - end
+    = f.error_messages
+    %p
+      = f.label :user_id
+      %br
+      = f.collection_select :user_id, User.find(:all), :id, :name
+    %p
+      = f.label :feed_url
+      %br
+      = f.text_field :feed_url
+    %p
+      = f.submit 'Create'
