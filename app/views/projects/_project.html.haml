@@ -3,7 +3,7 @@
     %strong
       = h project.name
     %small
-      by
+      por
       = project.users.map {|u| "#{link_to(h(u.name), user_slug_path(u))}"}.join(", ")
   %p
     = link_to h(project.url.gsub("http://", "")), h(project.url)

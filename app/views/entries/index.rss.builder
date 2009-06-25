@@ -1,8 +1,8 @@
 xml.instruct! :xml, :version => "1.0" 
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title "Entries on #{PLANETOID_CONF[:site][:title]}"
-    xml.description "Latest blog posts by the members of #{PLANETOID_CONF[:site][:title]}"
+    xml.title "Entradas en #{PLANETOID_CONF[:site][:title]}"
+    xml.description "Últimas entradas de los miembros de #{PLANETOID_CONF[:site][:title]}"
     xml.link entries_url
     
     for entry in @entries
