@@ -16,6 +16,21 @@ class User < ActiveRecord::Base
   
   sluggable_finder :name
   
+
+   def find(*args)
+     options = args.extract_options!
+     validate_find_options(options)
+     set_readonly_option!(options)
+
+     case args.first
+       when :first then find_initial(options)
+       when :last  then find_last(options)
+       when :all   then find_every(options)
+       else             find_from_ids(args, options)
+     end
+   end
+
+
   # Returns the full github URL for this user if has a github user, or nil if not
   def github_url
     github_user.blank? ? nil : "#{GITHUB_URL}#{github_user}"
