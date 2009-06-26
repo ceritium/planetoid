@@ -8,22 +8,23 @@
     - unless user.blog_url.blank?
       %b Blog: 
       = link_to(user.blog_url.gsub("http://", ""), user.blog_url) 
-    - unless user.twitter_user.blank?
       %br
+    - unless user.twitter_user.blank?
       %b Twitter: 
       = link_to(user.twitter_url.gsub("http://", ""), user.twitter_url)
-    - unless user.github_user.blank?
       %br
+    - unless user.github_user.blank?
       %b Github:
       = link_to(user.github_url.gsub("http://", ""), user.github_url)
-    - if user.projects.size > 0
       %br
+    - if user.projects.size > 0
       %b Proyectos:
       = user.projects.map {|p| "#{link_to(h(p.name), p.url)}"}.join(", ")
-    - unless user.email.blank?
       %br
+    - unless user.email.blank?
       %b Email:
       = user.email
+      %br
   - if admin?
     %p
       = link_to 'Edit', edit_user_path(user)
