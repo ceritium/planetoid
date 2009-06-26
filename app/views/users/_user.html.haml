@@ -5,10 +5,25 @@
     %strong
       = link_to(h(user.name),user_slug_path(user.to_param))
   %p
-    = "Blog: " + link_to(user.blog_url.gsub("http://", ""), user.blog_url) + "<br />" if !user.blog_url.blank?
-    = "Twitter: " + link_to(user.twitter_url.gsub("http://", ""), user.twitter_url) + "<br />" if !user.twitter_user.blank?
-    = "Github: " + link_to(user.github_url.gsub("http://", ""), user.github_url) + "<br />" if !user.github_user.blank?
-    = "Proyectos: " + user.projects.map {|p| "#{link_to(h(p.name), p.url)}"}.join(", ") if user.projects.size > 0
+    - unless user.blog_url.blank?
+      %b Blog: 
+      = link_to(user.blog_url.gsub("http://", ""), user.blog_url) 
+    - unless user.twitter_user.blank?
+      %br
+      %b Twitter: 
+      = link_to(user.twitter_url.gsub("http://", ""), user.twitter_url)
+    - unless user.github_user.blank?
+      %br
+      %b Github:
+      = link_to(user.github_url.gsub("http://", ""), user.github_url)
+    - if user.projects.size > 0
+      %br
+      %b Proyectos:
+      = user.projects.map {|p| "#{link_to(h(p.name), p.url)}"}.join(", ")
+    - unless user.email.blank?
+      %br
+      %b Email:
+      = user.email
   - if admin?
     %p
       = link_to 'Edit', edit_user_path(user)
