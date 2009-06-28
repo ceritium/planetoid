@@ -7,7 +7,9 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
-    
+      
+    when /show de (.*)/
+      user_path($1)
     when /editar al usuario (.*)/
       edit_user_path($1)
     when /página de login/
@@ -16,7 +18,6 @@ module NavigationHelpers
       '/'
     when /the new add_delicious_url page/
       new_add_delicious_url_path
-
     
     # Add more mappings here.
     # Here is a more fancy example:

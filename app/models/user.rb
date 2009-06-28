@@ -25,5 +25,8 @@ class User < ActiveRecord::Base
   def twitter_url
     twitter_user.blank? ? nil : "#{TWITTER_URL}#{twitter_user}"
   end
-
+  
+  def delicious_url
+    delicious_user.blank? ? nil : "#{DELICIOUS_URL}#{delicious_user}"
+  end
 end

@@ -4,5 +4,6 @@ Factory.define :user do |f|
   f.blog_url 'http://ceritium.net'
   f.twitter_user 'ceritium'
   f.github_user 'ceritium'
+  f.delicious_user 'ceritium'
   f.slug 'ceritium'
 end
