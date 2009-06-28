@@ -17,6 +17,10 @@
       %b Github:
       = link_to(user.github_url.gsub("http://", ""), user.github_url)
       %br
+    - unless user.delicious_user.blank?
+      %b Delicious:
+      = link_to(user.delicious_url.gsub("http://", ""), user.delicious_url)
+      %br
     - if user.projects.size > 0
       %b Proyectos:
       = user.projects.map {|p| "#{link_to(h(p.name), p.url)}"}.join(", ")

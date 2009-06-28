@@ -7,4 +7,4 @@ REXP_DELICIOUS_USER = /^([a-z0-9\_\-])+$/ix
 
 GITHUB_URL = "http://github.com/"
 TWITTER_URL = "http://twitter.com/"
-DELICIOUS = 'http://delicious.com/'
+DELICIOUS_URL = 'http://delicious.com/'

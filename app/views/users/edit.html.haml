@@ -29,6 +29,11 @@
       = GITHUB_URL
       = f.text_field :github_user
     %p
+      = f.label :delicious_user
+      %br
+      = DELICIOUS_URL
+      = f.text_field :delicious_user
+    %p
       = f.submit 'Update'
   = link_to 'Show', @user
   |
