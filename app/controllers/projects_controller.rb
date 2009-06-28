@@ -30,6 +30,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @users = User.find(:all, :order => 'name')
     @project = Project.find(params[:id])
   end
 
